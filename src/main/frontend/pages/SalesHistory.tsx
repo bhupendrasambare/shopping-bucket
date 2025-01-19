@@ -116,8 +116,21 @@ function SalesHistory() {
         updatedSale
       );
       setSuccessMessage('Sale updated successfully');
-      fetchSales(); // Refresh sales data
       setShowEditModal(false);
+      setFormData({
+        itemName: '', 
+        customerName: '',
+        itemId:null,
+        phone: '',
+        price: '',
+        email: '', 
+        quantity: 0,
+        startAmount: 0, 
+        endAmount: 10000, 
+        page: 0,
+        size: 10,
+      });
+      fetchSales(); // Refresh sales data
     } catch (err: any) {
       const errorMessage =
         err.response?.data?.message || 'Failed to update the sale.';
