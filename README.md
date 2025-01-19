@@ -1,51 +1,111 @@
-# Custom project from Hilla
+# Shopping Bucket Application
 
-This project can be used as a starting point to create your own Hilla application with Spring Boot.
-It contains all the necessary configuration and some placeholder files to get you started.
+This project is a simple web application designed to manage items and sales details, with functionality to perform CRUD operations, validations, and reporting. The application uses a database for persistent storage, supports pagination for large datasets, and handles concurrency effectively.
 
-## Running the application
+## Features
 
-The project is a standard Maven project. To run it from the command line,
-type `mvnw` (Windows), or `./mvnw` (Mac & Linux), then open
-http://localhost:8080 in your browser.
+### Item Management
+1. **Item Master (ITEMMAS) Table**:
+   - **Fields**: Item ID, Item Name, Item Quantity.
+   - Functionality:
+     - Create new items.
+     - Update item details.
+     - Ensure items are available for sale before selection.
 
-You can also import the project to your IDE of choice as you would with any
-Maven project.
+### Sales Management
+1. **Sales Details Table (SALEDETAILS)**:
+   - **Fields**: Shop Date, Mobile Number, Customer Name, Item ID, Address, State, Date of Birth, Minor, Quantity, Price, Pay Amount, Email ID.
+   - Functionality:
+     - Add new sales entries with validations.
+     - Update existing sales entries.
+     - Cancel sales entries.
 
-## Deploying to Production
+2. **Validations**:
+   - Proper date format for all dates.
+   - Valid mobile numbers.
+   - Valid email IDs.
+   - Ensure selected items exist in the item master and are available for sale.
+   - If the customer is a minor (under 18), restrict purchases to ₹1000.
+   - Apply a 20% discount for customers from Maharashtra.
 
-To create a production build, call `mvnw clean package -Pproduction` (Windows),
-or `./mvnw clean package -Pproduction` (Mac & Linux).
-This will build a JAR file with all the dependencies and front-end resources,
-ready to be deployed. The file can be found in the `target` folder after the build completes.
+### Search and Display
+1. **Search Functionality**:
+   - Search sales details by:
+     - Item Name.
+     - Customer Name.
+     - Mobile Number.
+     - Payment Amount.
+   - Apply pagination if the search results exceed 20 records.
 
-Once the JAR file is built, you can run it using
-`java -jar target/myapp-1.0-SNAPSHOT.jar` (NOTE, replace
-`myapp-1.0-SNAPSHOT.jar` with the name of your jar).
+2. **Reports**:
+   - Display item-wise and customer-wise total payment amounts:
+     - Up to the last month.
+     - For the current month.
+     - Total payment collected up to the current month.
+   - Top 5 customers based on payment collected.
+   - Top 10 customers based on shopping frequency.
 
-## Project structure
+### Reporting
+1. **Dashboard**:
+   - Detailed insights on sales performance:
+     - Item-wise and customer-wise payment statistics.
+     - Monthly breakdown of payments.
+     - Top customers by payment and shopping frequency.
 
-<table style="width:100%; text-align: left;">
-  <tr><th>Directory</th><th>Description</th></tr>
-  <tr><td><code>src/main/frontend/</code></td><td>Client-side source directory</td></tr>
-  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;<code>index.html</code></td><td>HTML template</td></tr>
-  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;<code>index.ts</code></td><td>Frontend 
-entrypoint, bootstraps a React application</td></tr>
-  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;<code>routes.tsx</code></td><td>React Router routes definition</td></tr>
-  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;<code>MainLayout.tsx</code></td><td>Main 
-layout component, contains the navigation menu, uses <a href="https://hilla.dev/docs/react/components/app-layout">
-App Layout</a></td></tr>
-  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;<code>views/</code></td><td>UI view 
-components</td></tr>
-  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;<code>themes/</code></td><td>Custom  
-CSS styles</td></tr>
-  <tr><td><code>src/main/java/&lt;groupId&gt;/</code></td><td>Server-side 
-source directory, contains the server-side Java views</td></tr>
-  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;<code>Application.java</code></td><td>Server entry-point</td></tr>
-</table>
+---
 
-## Useful links
+## Technologies Used
 
-- Read the documentation at [hilla.dev/docs](https://hilla.dev/docs/).
-- Ask questions on [Stack Overflow](https://stackoverflow.com/questions/tagged/vaadin) or join our [Forum](https://vaadin.com/forum).
-- Report issues, create pull requests in [GitHub](https://github.com/vaadin/hilla).
+1. **Frontend**: [React ts.]
+2. **Backend/API**: [Spring Boot ]
+3. **Database**: [h2 Relational data]
+
+---
+
+## How to Run
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/bhupendrasambare/shopping-bucket.git
+   ```
+2. Set up the database schema and tables using the provided scripts.
+3. Update the backend configuration with your database credentials.
+4. Start the backend server.
+5. Launch the frontend application.
+6. Access the application at `http://localhost:9000`.
+
+---
+
+## Validation Checklist
+
+1. **Basic Validations**:
+    - Proper date format: ✅
+    - Valid mobile numbers: ✅
+    - Valid email IDs: ✅
+    - Ensure selected items are valid and available for sale: ✅
+
+2. **Key Features Covered**:
+    - **Item Management**: ✅
+    - **Sales Entry and Update**: ✅
+    - **Cancel Sales**: ✅
+    - **Search and Display**: ✅
+    - **Reports and Insights**:
+        - Item-wise and customer-wise payments: ✅
+        - Top customers by payment and shopping frequency: ✅
+
+---
+
+## Assignment Evaluation
+
+### To be filled by the candidate:
+
+1. **Frontend**: [Specify your choice, e.g., React]
+2. **Backend/API**: [Specify your choice, e.g., Spring Boot]
+3. **Number of Validations Implemented**: [1-5]
+4. **Points Covered**: [1-8]
+
+---
+
+## Acknowledgments
+
+This project is created as part of an assignment to demonstrate full-stack application development skills, including frontend, backend, and database integration.
