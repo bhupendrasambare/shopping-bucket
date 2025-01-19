@@ -14,8 +14,9 @@ function NavbarComponent() {
                 <Navbar.Toggle aria-controls="navbarsStylez" />
                 <Navbar.Collapse id="navbarsStylez">
                 <Nav className="ms-auto mb-2 mb-md-0">
+                    <Nav.Link onClick={()=>navigate("/sales")} className={isActive("/") ? "active" : ""} >Sales</Nav.Link>
+                    <Nav.Link onClick={()=>navigate("/history")} className={isActive("/history") ? "active" : ""} >History</Nav.Link>
                     <Nav.Link onClick={()=>navigate("/items")} className={isActive("/items") ? "active" : ""} >Items</Nav.Link>
-                    <Nav.Link onClick={()=>navigate("/sales")} className={isActive("/sales") ? "active" : ""} >Sales History</Nav.Link>
                 </Nav>
                 </Navbar.Collapse>
             </Container>

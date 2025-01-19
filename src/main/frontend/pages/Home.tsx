@@ -200,6 +200,9 @@ function CreateSaleDetails() {
             </Form.Group>
           </div>
 
+          <div className="text-danger fs-6">NOTE: Phone number is the primary identity <br/>
+          (If updated all users with same number will upate name and email)</div>
+
           <Button variant="success" style={{ width: 200 }} type="submit" className="mt-3">
             Save Sale
           </Button>

@@ -151,18 +151,71 @@ public class SaleDetailService {
     }
 
     // 3. Update Sale Entry
-    public ResponseEntity<Response> updateSale(Integer saleId, SaleDetail updatedSale) {
+    public ResponseEntity<Response> updateSale(Integer saleId, SalesDetailsRequest updatedSale) {
         Optional<SaleDetail> saleOptional = saleDetailRepository.findById(saleId);
         if (saleOptional.isPresent()) {
             SaleDetail existingSale = saleOptional.get();
-            // Update fields conditionally
-            existingSale.setCustomerName(updatedSale.getCustomerName());
-            existingSale.setPhone(updatedSale.getPhone());
-            existingSale.setPayAmount(updatedSale.getPayAmount());
-            // Apply other update logic...
+            boolean customerUpdated = false;
+
+            // Validate and update Customer Name
+            if (updatedSale.getCustomerName() != null && !updatedSale.getCustomerName().isEmpty()) {
+                existingSale.setCustomerName(updatedSale.getCustomerName());
+                customerUpdated = true;
+            }
+
+            // Validate and update Phone Number
+            if (updatedSale.getPhone() != null && isValidPhoneNumber(updatedSale.getPhone())) {
+                existingSale.setPhone(updatedSale.getPhone());
+            }
+
+            // Validate and update Price
+            if (updatedSale.getPrice() != null && updatedSale.getPrice() > 0) {
+                existingSale.setPrice(updatedSale.getPrice());
+
+                // Recalculate Pay Amount based on state
+                double finalPrice = updatedSale.getPrice();
+                if ("Maharashtra".equalsIgnoreCase(existingSale.getState())) {
+                    finalPrice = finalPrice * 0.8;
+                    if (Boolean.TRUE.equals(existingSale.getMinor()) && finalPrice > 1000) {
+                        return new ResponseEntity<>(new Response(Constants.Status.FAIL,
+                                Constants.MINOR_PRICE_EXCEEDED_CODE, Constants.MINOR_PRICE_EXCEEDED), HttpStatus.BAD_REQUEST);
+                    }
+                }
+                existingSale.setPayAmount(finalPrice);
+            }
+
+            // Update Item Quantity
+            if (updatedSale.getQuantity() != null && updatedSale.getQuantity() > 0) {
+                Items item = existingSale.getItems();
+                if (item != null) {
+                    int quantityDifference = updatedSale.getQuantity() - existingSale.getQuantity();
+                    if (item.getItemQty() >= quantityDifference) {
+                        item.setItemQty(item.getItemQty() - quantityDifference);
+                        existingSale.setQuantity(updatedSale.getQuantity());
+                        itemRepository.save(item);
+                    } else {
+                        return new ResponseEntity<>(new Response(Constants.Status.FAIL,
+                                Constants.REQUESTED_QUANTITY_NOT_AVAILABLE_CODE,
+                                Constants.REQUESTED_QUANTITY_NOT_AVAILABLE), HttpStatus.BAD_REQUEST);
+                    }
+                }
+            }
+
+            // If Name or Email is updated, update the customer details
+            if (customerUpdated || (updatedSale.getEmail() != null && isValidEmail(updatedSale.getEmail()))) {
+                try {
+                    updateSaleCustomer(existingSale, existingSale.getPhone());
+                } catch (Exception e) {
+                    log.error("Error while updating customer details: {}", e.getMessage());
+                }
+            }
+
+            // Save updated sale details
             SaleDetail savedSale = saleDetailRepository.save(existingSale);
             return ResponseEntity.ok(new Response(Constants.SALE_UPDATED_SUCCESS, savedSale));
+
         } else {
+            // Sale not found
             return new ResponseEntity<>(new Response(Constants.Status.FAIL,
                     Constants.SALE_NOT_FOUND_CODE,
                     Constants.SALE_NOT_FOUND), HttpStatus.NOT_FOUND);

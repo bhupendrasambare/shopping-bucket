@@ -9,7 +9,6 @@ package com.example.application.controller;
 import com.example.application.dto.request.SaleSearchRequest;
 import com.example.application.dto.request.SalesDetailsRequest;
 import com.example.application.dto.response.Response;
-import com.example.application.entity.SaleDetail;
 import com.example.application.services.SaleDetailService;
 import com.example.application.utils.Constants;
 import io.swagger.v3.oas.annotations.Operation;
@@ -61,7 +60,7 @@ public class SalesDetailsController {
     @PutMapping("/{id}")
     @Operation(summary = "Update Sale Entry", description = "Update an existing sale entry by its ID")
     @ApiResponse(responseCode = "200", description = "Sale entry updated successfully")
-    public ResponseEntity<Response> updateSale(@PathVariable Integer id, @RequestBody SaleDetail updatedSale) {
+    public ResponseEntity<Response> updateSale(@PathVariable Integer id, @RequestBody SalesDetailsRequest updatedSale) {
         try {
             return saleDetailService.updateSale(id, updatedSale);
         } catch (Exception e) {
