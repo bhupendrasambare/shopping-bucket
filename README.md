@@ -2,6 +2,11 @@
 
 This project is a simple web application designed to manage items and sales details, with functionality to perform CRUD operations, validations, and reporting. The application uses a database for persistent storage, supports pagination for large datasets, and handles concurrency effectively.
 
+![Dashboard](./screenshoot/dashboard.png)
+![Dashboard](./screenshoot/add-sales.png)
+![Dashboard](./screenshoot/search-sales.png)
+![Dashboard](./screenshoot/items.png)
+
 ## Features
 
 ### Item Management

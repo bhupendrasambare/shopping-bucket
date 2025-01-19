@@ -19,7 +19,7 @@ spring:
     mustache:
         check-template-location: false
     application:
-        name: DOCTOR-APPOINTMENT
+        name: SHOPPING-BUCKET
 
     datasource:
         url: jdbc:h2:file:./spring-boot-h2-db
