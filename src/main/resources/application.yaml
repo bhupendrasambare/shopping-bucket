@@ -1,0 +1,33 @@
+vaadin:
+    launch-browser: true
+    allowed-packages:
+        - com.vaadin
+        - org.vaadin
+        - com.example.application
+    exclude-urls:
+        - "/swagger-ui/**"
+        - "/actuator/**"
+        - "/ecommerce-ui/files/**"
+        - "/v3/api-docs/**"
+        - "/api/v1/**"
+
+spring:
+    h2:
+        console:
+            enabled: true
+            path: /h2
+    mustache:
+        check-template-location: false
+    application:
+        name: DOCTOR-APPOINTMENT
+
+    datasource:
+        url: jdbc:h2:file:./spring-boot-h2-db
+        driver-class-name: org.h2.Driver
+        username: root
+        password: root
+    jpa:
+        defer-datasource-initialization: true
+        show-sql: false
+        hibernate:
+            ddl-auto: update

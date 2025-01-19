@@ -1,0 +1,78 @@
+2025-01-18 21:10:35.467642+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "create table items (id integer not null auto_increment, created_date datetime(6), item_name varchar(255), item_qty integer, updated_date datetime(6), primary key (id)) engine[*]=InnoDB"; expected "identifier"; SQL statement:
+create table items (id integer not null auto_increment, created_date datetime(6), item_name varchar(255), item_qty integer, updated_date datetime(6), primary key (id)) engine=InnoDB [42001-232]
+2025-01-18 21:10:35.473050+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "create table sales_details (id integer not null auto_increment, address varchar(255), customer_name varchar(255), date_of_birth datetime(6), email varchar(255), minor bit, pay_amount float(53), phone_number varchar(255), price float(53), quantity integer, shop_date datetime(6), state varchar(255), items_id integer, primary key (id)) engine[*]=InnoDB"; expected "identifier"; SQL statement:
+create table sales_details (id integer not null auto_increment, address varchar(255), customer_name varchar(255), date_of_birth datetime(6), email varchar(255), minor bit, pay_amount float(53), phone_number varchar(255), price float(53), quantity integer, shop_date datetime(6), state varchar(255), items_id integer, primary key (id)) engine=InnoDB [42001-232]
+2025-01-18 21:10:35.476253+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SALES_DETAILS" not found; SQL statement:
+alter table sales_details add constraint fk_sales_details_items_id foreign key (items_id) references items (id) [42102-232]
+2025-01-18 21:12:13.467676+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "create table items (id integer not null auto_increment, created_date datetime(6), item_name varchar(255), item_qty integer, updated_date datetime(6), primary key (id)) engine[*]=InnoDB"; expected "identifier"; SQL statement:
+create table items (id integer not null auto_increment, created_date datetime(6), item_name varchar(255), item_qty integer, updated_date datetime(6), primary key (id)) engine=InnoDB [42001-232]
+2025-01-18 21:12:13.473155+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "create table sales_details (id integer not null auto_increment, address varchar(255), customer_name varchar(255), date_of_birth datetime(6), email varchar(255), minor bit, pay_amount float(53), phone_number varchar(255), price float(53), quantity integer, shop_date datetime(6), state varchar(255), items_id integer, primary key (id)) engine[*]=InnoDB"; expected "identifier"; SQL statement:
+create table sales_details (id integer not null auto_increment, address varchar(255), customer_name varchar(255), date_of_birth datetime(6), email varchar(255), minor bit, pay_amount float(53), phone_number varchar(255), price float(53), quantity integer, shop_date datetime(6), state varchar(255), items_id integer, primary key (id)) engine=InnoDB [42001-232]
+2025-01-18 21:12:13.477167+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SALES_DETAILS" not found; SQL statement:
+alter table sales_details add constraint FK1rum3cbiokybfsork4hkftoyc foreign key (items_id) references items (id) [42102-232]
+2025-01-18 21:19:59.553860+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "create table items (id integer not null auto_increment, created_date datetime(6), item_name varchar(255), item_qty integer, updated_date datetime(6), primary key (id)) engine[*]=InnoDB"; expected "identifier"; SQL statement:
+create table items (id integer not null auto_increment, created_date datetime(6), item_name varchar(255), item_qty integer, updated_date datetime(6), primary key (id)) engine=InnoDB [42001-232]
+2025-01-18 21:19:59.558817+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "create table sales_details (id integer not null auto_increment, address varchar(255), customer_name varchar(255), date_of_birth datetime(6), email varchar(255), minor bit, pay_amount float(53), phone_number varchar(255), price float(53), quantity integer, shop_date datetime(6), state varchar(255), items_id integer, primary key (id)) engine[*]=InnoDB"; expected "identifier"; SQL statement:
+create table sales_details (id integer not null auto_increment, address varchar(255), customer_name varchar(255), date_of_birth datetime(6), email varchar(255), minor bit, pay_amount float(53), phone_number varchar(255), price float(53), quantity integer, shop_date datetime(6), state varchar(255), items_id integer, primary key (id)) engine=InnoDB [42001-232]
+2025-01-18 21:19:59.562268+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SALES_DETAILS" not found; SQL statement:
+alter table sales_details add constraint FK1rum3cbiokybfsork4hkftoyc foreign key (items_id) references items (id) [42102-232]
+2025-01-18 21:23:13.592990+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "create table items (id integer not null auto_increment, created_date datetime(6), item_name varchar(255), item_qty integer, updated_date datetime(6), primary key (id)) engine[*]=InnoDB"; expected "identifier"; SQL statement:
+create table items (id integer not null auto_increment, created_date datetime(6), item_name varchar(255), item_qty integer, updated_date datetime(6), primary key (id)) engine=InnoDB [42001-232]
+2025-01-18 21:23:13.600714+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "create table sales_details (id integer not null auto_increment, address varchar(255), customer_name varchar(255), date_of_birth datetime(6), email varchar(255), minor bit, pay_amount float(53), phone_number varchar(255), price float(53), quantity integer, shop_date datetime(6), state varchar(255), items_id integer, primary key (id)) engine[*]=InnoDB"; expected "identifier"; SQL statement:
+create table sales_details (id integer not null auto_increment, address varchar(255), customer_name varchar(255), date_of_birth datetime(6), email varchar(255), minor bit, pay_amount float(53), phone_number varchar(255), price float(53), quantity integer, shop_date datetime(6), state varchar(255), items_id integer, primary key (id)) engine=InnoDB [42001-232]
+2025-01-18 21:23:13.602491+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SALES_DETAILS" not found; SQL statement:
+alter table sales_details add constraint FK1rum3cbiokybfsork4hkftoyc foreign key (items_id) references items (id) [42102-232]
+2025-01-18 21:54:26.601083+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "create table items (id integer not null auto_increment, created_date datetime(6), item_name varchar(255), item_qty integer, updated_date datetime(6), primary key (id)) engine[*]=InnoDB"; expected "identifier"; SQL statement:
+create table items (id integer not null auto_increment, created_date datetime(6), item_name varchar(255), item_qty integer, updated_date datetime(6), primary key (id)) engine=InnoDB [42001-232]
+2025-01-18 21:54:26.605315+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "create table sales_details (id integer not null auto_increment, address varchar(255), customer_name varchar(255), date_of_birth datetime(6), email varchar(255), minor bit, pay_amount float(53), phone_number varchar(255), price float(53), quantity integer, shop_date datetime(6), state varchar(255), items_id integer, primary key (id)) engine[*]=InnoDB"; expected "identifier"; SQL statement:
+create table sales_details (id integer not null auto_increment, address varchar(255), customer_name varchar(255), date_of_birth datetime(6), email varchar(255), minor bit, pay_amount float(53), phone_number varchar(255), price float(53), quantity integer, shop_date datetime(6), state varchar(255), items_id integer, primary key (id)) engine=InnoDB [42001-232]
+2025-01-18 21:54:26.608632+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SALES_DETAILS" not found; SQL statement:
+alter table sales_details add constraint FK1rum3cbiokybfsork4hkftoyc foreign key (items_id) references items (id) [42102-232]
+2025-01-18 21:59:34.230496+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ITEMS" not found (this database is empty); SQL statement:
+select i1_0.id,i1_0.created_date,i1_0.item_name,i1_0.item_qty,i1_0.updated_date from items i1_0 limit ?,? [42104-232]
+2025-01-18 21:59:38.002284+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ITEMS" not found (this database is empty); SQL statement:
+select i1_0.id,i1_0.created_date,i1_0.item_name,i1_0.item_qty,i1_0.updated_date from items i1_0 limit ?,? [42104-232]
+2025-01-18 21:59:40.685605+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ITEMS" not found (this database is empty); SQL statement:
+select i1_0.id,i1_0.created_date,i1_0.item_name,i1_0.item_qty,i1_0.updated_date from items i1_0 limit ?,? [42104-232]
+2025-01-18 22:00:09.201406+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ITEMS" not found (this database is empty); SQL statement:
+select i1_0.id,i1_0.created_date,i1_0.item_name,i1_0.item_qty,i1_0.updated_date from items i1_0 limit ?,? [42104-232]
+2025-01-18 22:00:14.898486+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ITEMS" not found (this database is empty); SQL statement:
+select i1_0.id,i1_0.created_date,i1_0.item_name,i1_0.item_qty,i1_0.updated_date from items i1_0 limit ?,? [42104-232]
+2025-01-18 22:00:20.479112+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ITEMS" not found (this database is empty); SQL statement:
+select i1_0.id,i1_0.created_date,i1_0.item_name,i1_0.item_qty,i1_0.updated_date from items i1_0 limit ?,? [42104-232]
+2025-01-18 22:00:42.237331+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "create table items (id integer not null auto_increment, created_date datetime(6), item_name varchar(255), item_qty integer, updated_date datetime(6), primary key (id)) engine[*]=InnoDB"; expected "identifier"; SQL statement:
+create table items (id integer not null auto_increment, created_date datetime(6), item_name varchar(255), item_qty integer, updated_date datetime(6), primary key (id)) engine=InnoDB [42001-232]
+2025-01-18 22:00:42.241974+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "create table sales_details (id integer not null auto_increment, address varchar(255), customer_name varchar(255), date_of_birth datetime(6), email varchar(255), minor bit, pay_amount float(53), phone_number varchar(255), price float(53), quantity integer, shop_date datetime(6), state varchar(255), items_id integer, primary key (id)) engine[*]=InnoDB"; expected "identifier"; SQL statement:
+create table sales_details (id integer not null auto_increment, address varchar(255), customer_name varchar(255), date_of_birth datetime(6), email varchar(255), minor bit, pay_amount float(53), phone_number varchar(255), price float(53), quantity integer, shop_date datetime(6), state varchar(255), items_id integer, primary key (id)) engine=InnoDB [42001-232]
+2025-01-18 22:00:42.243694+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SALES_DETAILS" not found; SQL statement:
+alter table sales_details add constraint FK1rum3cbiokybfsork4hkftoyc foreign key (items_id) references items (id) [42102-232]
+2025-01-18 22:00:56.206488+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ITEMS" not found (this database is empty); SQL statement:
+select i1_0.id,i1_0.created_date,i1_0.item_name,i1_0.item_qty,i1_0.updated_date from items i1_0 limit ?,? [42104-232]
+2025-01-18 22:01:13.779183+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ITEMS" not found (this database is empty); SQL statement:
+select i1_0.id,i1_0.created_date,i1_0.item_name,i1_0.item_qty,i1_0.updated_date from items i1_0 limit ?,? [42104-232]
